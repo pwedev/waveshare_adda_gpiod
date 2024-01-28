@@ -13,8 +13,7 @@ class DAC8532:
     def __init__(self):
         self.cs_line = config.CS_DAC_LINE
         # config.module_init()
-        
-    
+
     def DAC8532_Write_Data(self, Channel, Data):
         config.digital_write(self.cs_line, 0) #cs  0
         config.spi_writebyte([Channel, Data >> 8, Data & 0xff])

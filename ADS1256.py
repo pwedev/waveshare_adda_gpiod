@@ -73,7 +73,8 @@ class ADS1256:
         self.cs_line = config.CS_LINE
         self.drdy_line = config.DRDY_LINE
 
-        
+    def __del__(self):
+        self.chip.close()
         
     # Hardware reset
     def ADS1256_reset(self):

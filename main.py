@@ -32,7 +32,8 @@ try:
         print ("\33[10A")
         DAC.DAC8532_Out_Voltage(DAC8532.channel_A, temp)
         DAC.DAC8532_Out_Voltage(DAC8532.channel_B, 3.3 - temp)
+        time.sleep(0.3)
 
-except Exception as e:
-    print(e)
+except KeyboardInterrupt:
+    print("Keyboard Interrupt detected. Shutting down.")
     exit()
